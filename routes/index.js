@@ -14,12 +14,17 @@ router.get('/', function(req, res, next) {
 
 	Promsie.all([hotelPromise, activityPromise, restaurantPromise])
 	.then(function(values) {
-		console.log(values);
-	})
-
-    res.render('index');
-
-
+		//console.log(values);
+		collections = {
+			hotels: values[0],
+			activities: values[1],
+			restaurants: values[2]
+		};
+		// console.log(values.length);
+	    res.render('index', collections);
+	}).catch(function(err){
+		console.log(err);
+	});
 });
 
 module.exports = router;
