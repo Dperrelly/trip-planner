@@ -1,13 +1,25 @@
-<<<<<<< HEAD
-{% extends layout %}
-
-{% block content%}
-
-{% endblock %}
-=======
 {% extends "layout.html" %}
 
 {% block content %}
-This is the home page
+
+<select>
+	{% for hotel in hotels %}
+
+	<option> {{ hotel.name }} </option>
+{% endfor %}
+</select>
+
+<select>
+	{% for activity in activities %}
+
+	<option> {{ activity.name }} </option>
+{% endfor %}
+</select>
+
+<select>
+	{% for restaurant in restaurants %}
+
+	<option> {{ restaurant.name }} </option>
+{% endfor %}
+</select>
 {% endblock %} 
->>>>>>> 60301826b5ec000f8da6d8bb055c5a78160c8670
