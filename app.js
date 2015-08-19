@@ -11,9 +11,18 @@ var users = require('./routes/users');
 
 var app = express();
 
-app.listen(3000, function(){
-  console.log('server running on port 3000');
-});
+var sassMiddleware = require('node-sass-middleware');
+app.use(sassMiddleware({
+    /* Options */
+    src: path.join(__dirname, 'scss'),
+    dest: path.join(__dirname, 'public/stylesheets'),
+    debug: true,
+    outputStyle: 'compressed',
+    prefix:  '/prefix'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+}));
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // view engine setup
 app.engine('html', swig.renderFile);
@@ -40,14 +49,14 @@ app.use(function(req, res, next) {
 
 // error handlers
 
-app.use(function(err, req, res, next){
-  res.status(err.status || 500);
-  console.log({error: err});
-  res.render('error', {
-      message: err.message,
-      error: err
-  });
-});
+// app.use(function(err, req, res, next){
+//   res.status(err.status || 500);
+//   console.log({error: err});
+//   res.render('error', {
+//       message: err.message,
+//       error: err
+//   });
+// });
 
 // development error handler
 // will print stacktrace
@@ -71,5 +80,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.listen(3000, function(){
+  console.log('server running on port 3000');
+});
 
 module.exports = app;
