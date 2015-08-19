@@ -11,21 +11,21 @@ var placeSchema = new mongoose.Schema({
 });
 
 var hotelSchema = new mongoose.Schema({
-	name: {type: String, required: true},
-	place: {type: mongoose.Schema.Types.ObjectId, ref: 'Place'},
+	name: {type: String},
+	place: {type: [placeSchema]},
 	num_stars: {type: Number, min: 1, max: 5},
 	amenities: {type: String}
 });
 
 var activitySchema = new mongoose.Schema({
 	name: {type: String, required: true},
-	place: {type: mongoose.Schema.Types.ObjectId, ref: 'Place'},
+	place: {type: [placeSchema]},
 	age_range: {type: String}
 });
 
 var restaurantSchema = new mongoose.Schema({
-	name: {type: String, required: true},
-	place: {type: mongoose.Schema.Types.ObjectId, ref: 'Place'},
+	name: {type: String},
+	place: {type: [placeSchema]},
 	cuisines: {type: String},
 	price: {type: Number, min: 1, max: 5}
 });
