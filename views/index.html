@@ -6,60 +6,85 @@
  <div class="container-fluid">
    <div class="navbar-header">
      <a class="navbar-brand" href="#">
-       <p>TRIP PLANNER</p>
+       TRIP PLANNER
+     </a>
+     <a class="navbar-brand" href="#">
+       USELESS LINK
      </a>
    </div>
  </div>
 </nav>
-<div class="map-container col-lg-8"></div>
-<div class="right-side container col-lg-4">
-	<div class="container brownbox"></div>
-
-	<h1>Hotels</h1>
-
-	<select>
-		{% for hotel in hotels %}
-
-		<option> {{ hotel.name }} </option>
-	{% endfor %}
-	</select>
-	<button type="button" class="btn btn-primary btn-xs">+</button>
-
-	<h1>Restaurants</h1>
-
-	<select>
-		{% for restaurant in restaurants %}
-
-		<option> {{ restaurant.name }} </option>
-	{% endfor %}
-	</select>
-	<button type="button" class="btn btn-primary btn-xs">+</button>
-
-	<h1>Things To Do And/Or Activities</h1>
-
-	<select>
-		{% for activity in activities %}
-
-		<option> {{ activity.name }} </option>
-	{% endfor %}
-	</select>
-	<button type="button" class="btn btn-primary btn-xs">+</button>
+<div class='main-container'>
+	<div class="map-container col-xs-8">
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3hZ9DOGo_LygmOtR37ka5OfL7gP7gig&sensor=true">
+		</script>
+	</div>
+	<div class="right-side container col-xs-4">
+		<div class="container brownbox">
+			<div class='container bonkers'>
+				<h1>Hotels</h1>
 
 
-	<h2>Day 2</h2>
+				<div class='container select-container'>
+					<select>
+						{% for hotel in hotels %}
 
-	<div class='container'></div>
-		<!-- flexbox -->
-	<div class='container greenbox'></div>
-	<h1>My Hotel</h1>
-	<p></p>
-	<button type="button" class="btn btn-primary btn-xs">XSmall</button>
-	<h1>My Restaurants</h1>
-	<p></p>
-	<button type="button" class="btn btn-primary btn-xs">XSmall</button>
-	<h1>My Activities</h1>
-	<p></p>
-	<button type="button" class="btn btn-primary btn-xs">XSmall</button>
+						<option> {{ hotel.name }} </option>
+
+						{% endfor %}
+					</select>
+					<button type="button" class="btn btn-plus btn-xs">+</button>
+				</div>
+			</div>
+
+			<div class='container bonkers'>
+				<h1>Restaurants</h1>
+				<div class='container select-container'>
+					<select>
+						{% for restaurant in restaurants %}
+
+						<option> {{ restaurant.name }} </option>
+
+						{% endfor %}
+					</select>
+					<button type="button" class="btn btn-plus btn-xs">+</button>
+				</div>
+			</div>
+
+			<div class='container bonkers'>
+				<h1>Activities</h1>
+				<div class='container select-container'>
+					<select>
+						{% for activity in activities %}
+
+						<option> {{ activity.name }} </option>
+
+						{% endfor %}
+					</select>
+					<button type="button" class="btn btn-plus btn-xs">+</button>
+				</div>
+			</div>
+		</div>
+
+		<div class='container greenbox'>
+
+			<h2>Day 2</h2>
+
+			<button type="button" class="btn btn-day btn-xs">1</button>
+			<button type="button" class="btn btn-day btn-xs">2</button>
+			<button type="button" class="btn btn-day btn-xs">3</button>
+			<button type="button" class="btn btn-day btn-xs">..</button>
+			<h1>My Hotel</h1>
+			<p></p>
+			<button type="button" class="btn btn-danger btn-xs">X</button>
+			<h1>My Restaurants</h1>
+			<p></p>
+			<button type="button" class="btn btn-danger btn-xs">X</button>
+			<h1>My Activities</h1>
+			<p></p>
+			<button type="button" class="btn btn-danger btn-xs">X</button>
+		</div>
+	</div>
 </div>
 {% endblock %} 
 

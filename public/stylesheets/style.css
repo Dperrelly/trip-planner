@@ -1,12 +1,77 @@
 .map-container {
   background-color: purple;
-  height: 400px; }
+  height: 100%; }
 
 select {
-  width: 51%; }
+  width: calc(100% - 28px);
+  float: left;
+  margin: 0px 5px; }
 
 h1 {
   font-size: 1em; }
 
-.container {
-  background-color: brown; }
+h2 {
+  margin: 0px; }
+
+.bonkers {
+  height: 33%;
+  width: calc(80% + 23px);
+  text-align: center;
+  line-height: 9px; }
+
+.brownbox {
+  background-color: white;
+  height: calc(50% - 20px);
+  width: 80%;
+  border-radius: 25px;
+  margin: 10px auto;
+  border-style: solid;
+  border-width: 5px; }
+
+.greenbox {
+  background-color: white;
+  height: calc(50% - 20px);
+  width: 80%;
+  border-radius: 25px;
+  margin: 10px auto;
+  border-style: solid;
+  border-width: 5px; }
+
+.right-side {
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+.main-container {
+  height: 600px; }
+
+.btn-danger {
+  background-color: red;
+  height: 20px;
+  width: 20px; }
+
+.btn-plus {
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  float: left;
+  line-height: 9px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  vertical-align: center; }
+
+.btn-day {
+  border-radius: 5px;
+  height: 18px;
+  width: 18px;
+  float: left;
+  line-height: 9px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  vertical-align: center; }
+
+.select-container {
+  margin: auto;
+  width: 100%; }
