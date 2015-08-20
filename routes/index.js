@@ -27,4 +27,5 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.use("/bower_components", express.static(__dirname + "/../bower_components"));
 module.exports = router;

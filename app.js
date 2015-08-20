@@ -11,15 +11,23 @@ var users = require('./routes/users');
 
 var app = express();
 
-var sassMiddleware = require('node-sass-middleware');
-app.use(sassMiddleware({
-    /* Options */
-    src: path.join(__dirname, 'scss'),
-    dest: path.join(__dirname, 'public/stylesheets'),
-    debug: true,
-    outputStyle: 'compressed',
-    prefix:  '/prefix'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
-}));
+var sass = require('node-sass-middleware');
+// app.use(sassMiddleware({
+//     /* Options */
+//     src: path.join(__dirname, 'scss'),
+//     dest: path.join(__dirname, 'public/stylesheets'),
+//     debug: true,
+//     outputStyle: 'compressed',
+//     prefix:  '/prefix'  // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+// }));
+
+app.use(
+  sass({
+    src: __dirname + '/Assets',
+    dest: __dirname + '/public', //where css should go
+    debug: true
+  })
+);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -36,6 +44,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', routes);
 app.use('/users', users);

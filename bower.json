@@ -1,0 +1,13 @@
+{
+  "name": "trip-planner",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Dperrelly/trip-planner",
+  "authors": [
+    "Daniel Perrelly <danperrelly@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}

@@ -1,8 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+.map-container {
+  background-color: purple;
+  height: 400px; }
 
-a {
-  color: #00B7FF;
-}
+select {
+  width: 51%; }
+
+h1 {
+  font-size: 1em; }
+
+.container {
+  background-color: brown; }
